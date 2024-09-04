@@ -1,14 +1,72 @@
 import { DataSource } from "typeorm";
+import { config } from "dotenv";
+config();
+import {
+  Availability,
+  Booking,
+  Hotel,
+  Payment,
+  Review,
+  Room,
+  User,
+} from "../entities";
+import { Client } from "pg";
 
-const AppDataSource = new DataSource({
+const { DB_HOST, DB_PORT, DB_USERNAME, DB_PASSWORD, DB_NAME } = process.env;
+
+let AppDataSource: DataSource;
+
+export const createDatabase = async () => {
+  const client = new Client({
+    host: DB_HOST,
+    port: Number(DB_PORT),
+    user: DB_USERNAME,
+    password: String(DB_PASSWORD),
+    database: "postgres", // Connect to the default "postgres" database
+  });
+
+  try {
+    await client.connect();
+
+    const res = await client.query(
+      `SELECT 1 FROM pg_database WHERE datname = $1`,
+      [DB_NAME]
+    );
+
+    if (res.rowCount === 0) {
+      await client.query(`CREATE DATABASE "${DB_NAME}"`);
+      console.log(`Database "${DB_NAME}" created successfully.`);
+    } else {
+      console.log(`Database "${DB_NAME}" already exists.`);
+    }
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      if ((error as any).code === "23505") {
+        console.log(`Database "${DB_NAME}" already exists.`);
+      } else {
+        console.error("Error creating database", error.message);
+        process.exit(1);
+      }
+    } else {
+      console.error("Unexpected error", error);
+      process.exit(1);
+    }
+  } finally {
+    await client.end();
+  }
+};
+
+AppDataSource = new DataSource({
   type: "postgres",
-  host: process.env.DB_HOST || "localhost",
-  port: Number(process.env.DB_PORT) || 5432,
-  username: process.env.DB_USERNAME || "your_username",
-  password: process.env.DB_PASSWORD || "your_password",
-  database: process.env.DB_NAME || "your_database",
-  entities: [], // Add all your entities here
-  synchronize: true, // Set to false in production
-  logging: true, // Optional: Enable logging for debugging
+  host: DB_HOST,
+  port: Number(DB_PORT),
+  username: DB_USERNAME,
+  password: String(DB_PASSWORD),
+  database: DB_NAME,
+  entities: [Availability, Booking, Hotel, Payment, Review, Room, User],
+  synchronize: false,
+  logging: true,
+  migrations: ["src/migration/**/*.ts"],
 });
+
 export default AppDataSource;
