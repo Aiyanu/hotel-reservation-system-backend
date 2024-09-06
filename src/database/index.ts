@@ -66,7 +66,7 @@ AppDataSource = new DataSource({
   database: DB_NAME,
   entities: [Availability, Booking, Hotel, Payment, Review, Room, User, Token],
   synchronize: false,
-  logging: false,
+  logging: true,
   migrations: ["src/migration/**/*.ts"],
 });
 

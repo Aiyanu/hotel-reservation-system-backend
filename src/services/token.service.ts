@@ -45,6 +45,8 @@ class TokenService {
     expiration?: Date
   ): Promise<IToken> {
     const tokenValue = await this.generateUniqueCode(length);
+    console.log(tokenValue);
+
     const tokenExpiration =
       expiration ||
       new Date(Date.now() + this.defaultExpirationMinutes * 60 * 1000); // 5 minutes
@@ -52,10 +54,11 @@ class TokenService {
     const token = await this.tokenRepository.createToken({
       code: tokenValue,
       type,
-      user,
+      user, // Ensure user is passed correctly
       expiration: tokenExpiration,
       isUsed: false,
     });
+
     return token;
   }
 

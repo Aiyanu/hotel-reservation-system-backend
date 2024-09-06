@@ -97,3 +97,49 @@
 2024-09-06T12:31:37.119Z [error]: Error: Token Expired
 2024-09-06T12:31:43.616Z [info]: Received POST request for /api/auth/reset-password
 2024-09-06T12:31:43.781Z [info]: Success: Password Reset Successful
+2024-09-06T12:39:14.324Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T12:39:15.448Z [info]: Success: OTP code sent to email
+2024-09-06T12:39:27.660Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:39:27.769Z [info]: Success: Password Reset Successful
+2024-09-06T12:40:04.144Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T12:40:05.666Z [info]: Success: OTP code sent to email
+2024-09-06T12:40:13.508Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:40:13.562Z [info]: Success: Password Reset Successful
+2024-09-06T12:43:19.324Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:43:19.361Z [error]: Error: Token Expired
+2024-09-06T12:43:42.403Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T12:43:43.669Z [info]: Success: OTP code sent to email
+2024-09-06T12:43:53.099Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:43:53.202Z [info]: Success: Password Reset Successful
+2024-09-06T12:45:13.201Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:45:13.339Z [info]: Success: Password Reset Successful
+2024-09-06T12:45:26.627Z [info]: Received POST request for /api/auth/login
+2024-09-06T12:45:26.676Z [error]: Error: Invalid Credentials
+2024-09-06T12:50:08.321Z [info]: Received POST request for /api/auth/login
+2024-09-06T12:50:08.350Z [error]: Error: Invalid Credentials
+2024-09-06T12:50:29.932Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T12:50:30.802Z [info]: Success: OTP code sent to email
+2024-09-06T12:50:46.296Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:50:46.373Z [info]: Success: Password Reset Successful
+2024-09-06T12:51:11.228Z [info]: Received POST request for /api/auth/login
+2024-09-06T12:51:11.280Z [error]: Error: Invalid Credentials
+2024-09-06T12:51:18.843Z [info]: Received POST request for /api/auth/login
+2024-09-06T12:51:18.849Z [error]: Error: Invalid Credentials
+2024-09-06T12:51:29.850Z [info]: Received POST request for /api/auth/login
+2024-09-06T12:51:29.902Z [error]: Error: Invalid Credentials
+2024-09-06T12:51:34.277Z [info]: Received POST request for /api/auth/login
+2024-09-06T12:51:34.282Z [error]: Error: Invalid Credentials
+2024-09-06T12:51:45.844Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:51:45.921Z [info]: Success: Password Reset Successful
+2024-09-06T12:52:13.622Z [info]: Received POST request for /api/auth/login
+2024-09-06T12:52:13.674Z [error]: Error: Invalid Credentials
+2024-09-06T12:52:24.521Z [info]: Received POST request for /api/auth/login
+2024-09-06T12:52:24.572Z [error]: Error: Invalid Credentials
+2024-09-06T12:54:04.441Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:54:04.597Z [info]: Success: Password Reset Successful
+2024-09-06T12:54:10.387Z [info]: Received POST request for /api/auth/login
+2024-09-06T12:54:10.461Z [info]: Success: Login Successful
+2024-09-06T13:11:09.279Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T13:11:10.489Z [info]: Success: OTP code sent to email
+2024-09-06T13:11:31.139Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T13:11:31.302Z [info]: Success: Password Reset Successful

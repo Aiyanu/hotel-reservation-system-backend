@@ -24,11 +24,19 @@ class TokenRepository implements ITokenRepository {
     });
   }
   async invalidateToken(token: Partial<ITokenCreationBody>): Promise<void> {
-    this.tokenRepository.update(
+    const { code, type, user } = token;
+
+    if (!user || !user.id) {
+      throw new Error("User ID is required to invalidate token");
+    }
+
+    await this.tokenRepository.update(
       {
-        ...token,
+        code,
+        type,
+        user: { id: user.id }, // Ensure userId exists
       } as FindOptionsWhere<Token>,
-      { isUsed: false }
+      { isUsed: true }
     );
   }
 }

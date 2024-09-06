@@ -1,3 +1,4 @@
+import { Token } from "./../entities/Token.entity";
 import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import JWT from "jsonwebtoken";
@@ -157,10 +158,11 @@ class AuthController {
       }
 
       await this.tokenService.invalidateToken(isTokenValid);
+      const newPassword = bcrypt.hashSync(body.password);
       await this.userService.updateUser(
         { id: isTokenValid.user.id },
         {
-          password: body.password,
+          password: newPassword,
         }
       );
       return handleSuccess(
