@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import { UserRepository } from "../repository";
 import { UserController } from "../controllers";
 import { EmailService, UploadService, UserService } from "../services";
-import { Auth } from "../middlewares/middleware";
+import { Auth, uploadFileMiddleware } from "../middlewares/middleware";
 
 const router = express.Router();
 const userService = new UserService(new UserRepository());
@@ -22,8 +22,11 @@ const UserRouter = () => {
   router.delete("/:id", Auth(), (req: Request, res: Response) =>
     userController.deleteUser(req, res)
   );
-  router.post("/upload/profile", Auth(), (req: Request, res: Response) =>
-    userController.uploadProfilePhoto(req, res)
+  router.post(
+    "/upload/profile",
+    Auth(),
+    uploadFileMiddleware("profile"),
+    (req: Request, res: Response) => userController.uploadProfilePhoto(req, res)
   );
   return router;
 };

@@ -47,6 +47,7 @@ class AuthController {
       }
       const token = JWT.sign(
         {
+          id: user.id,
           firstName: user.firstName,
           lastName: user.lastName,
           username: user.username,
@@ -80,7 +81,7 @@ class AuthController {
       } as IUserCreationBody;
       newUser.password = bcrypt.hashSync(newUser.password, 10);
       const exist = await this.userService.getUserByField({
-        where: { email: newUser.email },
+        email: newUser.email,
       });
       if (exist) {
         return handleError(res, ResponseCodes.CONFLICT, "User Already Exists");
@@ -104,7 +105,7 @@ class AuthController {
     const body = req.body;
     try {
       const user = await this.userService.getUserByField({
-        where: { email: body.email },
+        email: body.email,
       });
       if (!user) {
         return handleError(res, ResponseCodes.CONFLICT, "Email Doesn't Exist");

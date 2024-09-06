@@ -14,7 +14,8 @@ class UserService {
     const query = { where: {} } as IFindUserQuery;
     return await this.userRepository.fetchAll(query);
   }
-  async getUserByField(query: IFindUserQuery) {
+  async getUserByField(userData: Partial<IUser>) {
+    const query = { where: { ...userData } } as IFindUserQuery;
     return await this.userRepository.fetchOne(query);
   }
 

@@ -143,3 +143,38 @@
 2024-09-06T13:11:10.489Z [info]: Success: OTP code sent to email
 2024-09-06T13:11:31.139Z [info]: Received POST request for /api/auth/reset-password
 2024-09-06T13:11:31.302Z [info]: Success: Password Reset Successful
+2024-09-06T13:19:28.019Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T13:19:29.164Z [info]: Success: OTP code sent to email
+2024-09-06T13:19:43.465Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T13:19:43.608Z [info]: Success: Password Reset Successful
+2024-09-06T13:22:08.293Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T13:22:10.004Z [info]: Success: OTP code sent to email
+2024-09-06T13:22:17.489Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T13:22:17.597Z [info]: Success: Password Reset Successful
+2024-09-06T22:52:13.239Z [info]: Received POST request for /api/auth/login
+2024-09-06T22:52:13.995Z [info]: Success: Login Successful
+2024-09-06T22:57:32.749Z [info]: Received GET request for /api//users
+2024-09-06T22:57:44.859Z [info]: Received GET request for /api//users
+2024-09-06T22:57:56.712Z [info]: Received GET request for /api/users
+2024-09-06T22:57:56.719Z [error]: Error: Authorization Failed
+2024-09-06T22:59:38.178Z [info]: Received POST request for /api/auth/login
+2024-09-06T22:59:38.447Z [info]: Success: Login Successful
+2024-09-06T22:59:59.321Z [info]: Received GET request for /api/users
+2024-09-06T22:59:59.443Z [info]: Success: Fetched All Users Successfully
+2024-09-06T23:00:56.088Z [info]: Received GET request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb
+2024-09-06T23:00:56.181Z [info]: Success: User Fetched Successfully
+2024-09-06T23:03:30.217Z [info]: Received GET request for /api/users/upload/profile
+2024-09-06T23:03:47.055Z [info]: Received POST request for /api/users/upload/profile
+2024-09-06T23:03:47.189Z [error]: Error: Cannot read properties of undefined (reading 'originalname')
+2024-09-06T23:23:45.010Z [info]: Received POST request for /api/users/upload/profile
+2024-09-06T23:29:53.287Z [info]: Received POST request for /api/users/upload/profile
+2024-09-06T23:31:39.456Z [info]: Received POST request for /api/users/upload/profile
+2024-09-06T23:32:53.953Z [info]: Received POST request for /api/users/upload/profile
+2024-09-06T23:34:07.724Z [info]: Received POST request for /api/users/upload/profile
+2024-09-06T23:34:29.586Z [info]: Received POST request for /api/users/upload/profile
+2024-09-06T23:39:59.555Z [info]: Received POST request for /api/users/upload/profile
+2024-09-06T23:41:39.020Z [info]: Received POST request for /api/users/upload/profile
+2024-09-06T23:43:53.537Z [info]: Received POST request for /api/users/upload/profile
+2024-09-06T23:43:57.905Z [info]: Success: Profile photo uploaded successfully
+2024-09-06T23:46:12.939Z [info]: Received GET request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb
+2024-09-06T23:46:13.031Z [info]: Success: User Fetched Successfully
