@@ -30,10 +30,13 @@ class UserRepository implements IUserRepository {
     return user;
   }
   async updateOne(
-    searchBy: IFindUserQuery,
-    data: Partial<IUser>
+    searchBy: Partial<IUser>,
+    data: Partial<IUserCreationBody>
   ): Promise<void> {
-    await this.userRepository.update(searchBy as FindOptionsWhere<User>, data);
+    await this.userRepository.update(
+      { ...searchBy } as FindOptionsWhere<User>,
+      data
+    );
   }
   async deleteOne(searchBy: IFindUserQuery): Promise<void> {
     await this.userRepository.delete(searchBy as FindOptionsWhere<User>);

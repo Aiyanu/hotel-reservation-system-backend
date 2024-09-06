@@ -15,7 +15,7 @@ export class Token implements IToken {
   id!: number;
 
   @Column({ type: "varchar", length: 255, unique: true })
-  token!: string;
+  code!: string;
 
   @Column({ type: "varchar", length: 50 })
   type!: string; // e.g., 'authentication', 'email-verification', 'phone-verification'

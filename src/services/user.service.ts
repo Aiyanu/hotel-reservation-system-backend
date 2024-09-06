@@ -18,9 +18,11 @@ class UserService {
     return await this.userRepository.fetchOne(query);
   }
 
-  async updateUser(userId: string, userData: Partial<IUserCreationBody>) {
-    const query = { where: { id: userId } } as IFindUserQuery;
-    await this.userRepository.updateOne(query, userData);
+  async updateUser(
+    searchBy: Partial<IUser>,
+    userData: Partial<IUserCreationBody>
+  ) {
+    await this.userRepository.updateOne(searchBy, userData);
   }
   async deleteUser(userId: string) {
     const query = { where: { id: userId } } as IFindUserQuery;

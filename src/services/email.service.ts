@@ -32,14 +32,13 @@ class EmailService {
     const command = new SendEmailCommand(params);
     try {
       await this.sesClient.send(command);
-      console.log(`Email sent to ${to}`);
     } catch (error) {
       console.error(`Failed to send email to ${to}:`, error);
     }
   }
 
-  public sendForgotPasswordEmail(to: string, token: string) {
-    const resetUrl = `http://localhost:5000/reset-password/${token}`;
+  public sendForgotPasswordEmail(to: string, code: string) {
+    const resetUrl = `${process.env.DOMAIN_URL}/reset-password/${code}`;
     const subject = "Password Reset Request";
     const htmlBody = `<p>Click <a href="${resetUrl}">here</a> to reset your password.</p>`;
 
@@ -47,7 +46,7 @@ class EmailService {
   }
 
   public sendBookingConfirmationEmail(to: string, bookingId: string) {
-    const bookingUrl = `http://localhost:5000/bookings/${bookingId}`;
+    const bookingUrl = `${process.env.DOMAIN_URL}/bookings/${bookingId}`;
     const subject = "Booking Confirmation";
     const htmlBody = `<p>Your booking is confirmed. View your booking details <a href="${bookingUrl}">here</a>.</p>`;
 
@@ -56,3 +55,4 @@ class EmailService {
 }
 
 export default EmailService;
+5000;

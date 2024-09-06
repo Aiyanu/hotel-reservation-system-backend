@@ -4,7 +4,7 @@ import { IUser } from "./user.interface";
 
 export interface IToken {
   id: number;
-  token: string;
+  code: string;
   type: string;
   expiration: Date;
   isUsed: boolean;
@@ -25,7 +25,7 @@ export interface IFindTokenQuery {
 }
 
 export interface ITokenRepository {
-  findToken(token: string, type: string): Promise<Token | null>;
+  findToken(token: Partial<ITokenCreationBody>): Promise<Token | null>;
   createToken(tokenData: ITokenCreationBody): Promise<IToken>;
-  invalidateToken(token: string): Promise<void>;
+  invalidateToken(token: Partial<ITokenCreationBody>): Promise<void>;
 }

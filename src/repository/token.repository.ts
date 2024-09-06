@@ -17,16 +17,16 @@ class TokenRepository implements ITokenRepository {
     const token = this.tokenRepository.create(tokenData);
     return await this.tokenRepository.save(token);
   }
-  async findToken(token: string, type: string): Promise<Token | null> {
+  async findToken(token: Partial<ITokenCreationBody>): Promise<Token | null> {
     return this.tokenRepository.findOne({
-      where: { token, type },
+      where: { ...token } as FindOptionsWhere<Token>,
       relations: ["user"],
     });
   }
-  async invalidateToken(token: string): Promise<void> {
+  async invalidateToken(token: Partial<ITokenCreationBody>): Promise<void> {
     this.tokenRepository.update(
       {
-        where: { token },
+        ...token,
       } as FindOptionsWhere<Token>,
       { isUsed: false }
     );

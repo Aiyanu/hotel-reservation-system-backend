@@ -33,6 +33,9 @@ export interface IUserRepository {
   fetchOne(query: IFindUserQuery): Promise<IUser | null>;
   fetchAll(query: IFindUserQuery): Promise<IUser[] | null>;
   create(record: IUserCreationBody): Promise<IUser>;
-  updateOne(searchBy: IFindUserQuery, data: Partial<IUser>): Promise<void>;
+  updateOne(
+    searchBy: Partial<IUser>,
+    data: Partial<IUserCreationBody>
+  ): Promise<void>;
   deleteOne(searchBy: IFindUserQuery): Promise<void>;
 }

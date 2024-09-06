@@ -11,6 +11,8 @@ import {
 import { IUserCreationBody } from "../interfaces/user.interface";
 import TokenService from "../services/token.service";
 import { TokenType } from "../interfaces/enums/token.enum";
+import { ITokenCreationBody } from "../interfaces/token.interface";
+import moment from "moment";
 
 class AuthController {
   private authService: AuthService;
@@ -112,7 +114,7 @@ class AuthController {
         6
       );
       await this.emailService
-        .sendForgotPasswordEmail(body.email, token)
+        .sendForgotPasswordEmail(body.email, token.code)
         .then(() => {
           return handleSuccess(
             res,
@@ -135,7 +137,45 @@ class AuthController {
       );
     }
   }
-  async resetPassword(req: Request, res: Response) {}
+  async resetPassword(req: Request, res: Response) {
+    const body = req.body;
+    try {
+      const token = {
+        code: String(body.code).toUpperCase(),
+        isUsed: false,
+      } as Partial<ITokenCreationBody>;
+      const isTokenValid = await this.tokenService.verifyToken(token);
+      if (!isTokenValid) {
+        return handleError(res, ResponseCodes.CONFLICT, "Token Expired");
+      }
+
+      if (
+        isTokenValid &&
+        moment(isTokenValid.expiration).diff(moment(), "minute") <= 0
+      ) {
+        return handleError(res, ResponseCodes.CONFLICT, "Token Expired");
+      }
+
+      await this.tokenService.invalidateToken(isTokenValid);
+      await this.userService.updateUser(
+        { id: isTokenValid.user.id },
+        {
+          password: body.password,
+        }
+      );
+      return handleSuccess(
+        res,
+        ResponseCodes.SUCCESS,
+        "Password Reset Successful"
+      );
+    } catch (err) {
+      return handleError(
+        res,
+        ResponseCodes.INTERNAL_SERVER_ERROR,
+        (err as TypeError).message
+      );
+    }
+  }
 }
 
 export default AuthController;

@@ -55,3 +55,45 @@
 2024-09-06T03:03:24.414Z [info]: Received POST request for /api/auth/forgot-password
 2024-09-06T03:03:24.444Z [error]: Error: No metadata for "Token" was found.
 2024-09-06T03:20:11.945Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T03:32:26.927Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T03:32:27.714Z [info]: Success: OTP code sent to email
+2024-09-06T03:32:45.921Z [info]: Received GET request for /reset-password/0560fa7513ce
+2024-09-06T11:25:19.527Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T11:25:19.817Z [error]: Error: column "code" of relation "token" does not exist
+2024-09-06T11:26:24.221Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T11:26:30.903Z [info]: Success: OTP code sent to email
+2024-09-06T11:51:21.695Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T11:51:42.067Z [info]: Success: OTP code sent to email
+2024-09-06T11:56:29.346Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T11:57:19.841Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T11:57:19.873Z [error]: Error: Token Expired
+2024-09-06T11:57:26.721Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T11:57:56.347Z [info]: Success: OTP code sent to email
+2024-09-06T11:58:34.947Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T11:58:35.022Z [error]: Error: Property "where" was not found in "User". Make sure your query is correct.
+2024-09-06T12:05:43.981Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:05:44.056Z [error]: Error: Token Expired
+2024-09-06T12:05:55.822Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:05:55.876Z [error]: Error: Token Expired
+2024-09-06T12:05:56.805Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:05:56.810Z [error]: Error: Token Expired
+2024-09-06T12:06:06.373Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:06:06.412Z [error]: Error: Property "where" was not found in "User". Make sure your query is correct.
+2024-09-06T12:09:05.697Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:09:05.769Z [error]: Error: Property "where" was not found in "User". Make sure your query is correct.
+2024-09-06T12:09:07.007Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:09:07.014Z [error]: Error: Property "where" was not found in "User". Make sure your query is correct.
+2024-09-06T12:09:56.628Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:09:56.663Z [error]: Error: Property "where" was not found in "User". Make sure your query is correct.
+2024-09-06T12:11:51.880Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:11:51.916Z [error]: Error: Property "where" was not found in "User". Make sure your query is correct.
+2024-09-06T12:13:13.907Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:13:13.951Z [error]: Error: Property "where" was not found in "User". Make sure your query is correct.
+2024-09-06T12:19:08.824Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:19:08.867Z [info]: Success: Password Reset Successful
+2024-09-06T12:30:54.724Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T12:31:13.381Z [info]: Success: OTP code sent to email
+2024-09-06T12:31:37.063Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:31:37.119Z [error]: Error: Token Expired
+2024-09-06T12:31:43.616Z [info]: Received POST request for /api/auth/reset-password
+2024-09-06T12:31:43.781Z [info]: Success: Password Reset Successful

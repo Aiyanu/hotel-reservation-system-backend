@@ -1,7 +1,9 @@
-import crypto from "crypto";
-import { ITokenRepository } from "../interfaces/token.interface";
-import { Token } from "../entities/Token.entity";
 import { IUser } from "../interfaces/user.interface";
+import {
+  IToken,
+  ITokenCreationBody,
+  ITokenRepository,
+} from "../interfaces/token.interface";
 
 class TokenService {
   private tokenRepository: ITokenRepository;
@@ -12,40 +14,62 @@ class TokenService {
   }
 
   // Generate a token of a given length
-  generateToken(length: number): string {
-    return crypto.randomBytes(length).toString("hex");
+  private generateCode = (num: number = 15): string => {
+    const dateString = Date.now().toString(36);
+    const randomness = Math.random().toString(36).substr(2);
+    let result = randomness + dateString;
+    result = result.length > num ? result.substring(0, num) : result;
+    return result.toUpperCase();
+  };
+
+  // Check if token already exists
+  private async isCodeUnique(code: string): Promise<boolean> {
+    const existingToken = await this.tokenRepository.findToken({ code });
+    return !existingToken;
+  }
+
+  // Generate a unique code
+  private async generateUniqueCode(length: number): Promise<string> {
+    let tokenValue = this.generateCode(length);
+    while (!(await this.isCodeUnique(tokenValue))) {
+      tokenValue = this.generateCode(length);
+    }
+    return tokenValue;
   }
 
   // Save a new token with a default expiration of 5 minutes
-  async createToken(
+  public async createToken(
     user: IUser,
     type: string,
     length: number,
     expiration?: Date
-  ) {
-    const tokenValue = this.generateToken(length);
-
+  ): Promise<IToken> {
+    const tokenValue = await this.generateUniqueCode(length);
     const tokenExpiration =
       expiration ||
       new Date(Date.now() + this.defaultExpirationMinutes * 60 * 1000); // 5 minutes
 
-    await this.tokenRepository.createToken({
-      token: tokenValue,
+    const token = await this.tokenRepository.createToken({
+      code: tokenValue,
       type,
       user,
       expiration: tokenExpiration,
       isUsed: false,
     });
-    return tokenValue;
+    return token;
   }
 
   // Verify a token
-  async verifyToken(token: string, type: string): Promise<Token | null> {
-    return this.tokenRepository.findToken(token, type);
+  public async verifyToken(
+    token: Partial<ITokenCreationBody>
+  ): Promise<IToken | null> {
+    return this.tokenRepository.findToken(token);
   }
 
   // Invalidate a token
-  async invalidateToken(token: string): Promise<void> {
+  public async invalidateToken(
+    token: Partial<ITokenCreationBody>
+  ): Promise<void> {
     return this.tokenRepository.invalidateToken(token);
   }
 }
