@@ -2,15 +2,16 @@ import { DataSource } from "typeorm";
 import { config } from "dotenv";
 config();
 import {
+  Hotel,
   Availability,
   Booking,
-  Hotel,
   Payment,
   Review,
   Room,
   User,
 } from "../entities";
 import { Client } from "pg";
+import { Token } from "../entities/Token.entity";
 
 const { DB_HOST, DB_PORT, DB_USERNAME, DB_PASSWORD, DB_NAME } = process.env;
 
@@ -63,9 +64,9 @@ AppDataSource = new DataSource({
   username: DB_USERNAME,
   password: String(DB_PASSWORD),
   database: DB_NAME,
-  entities: [Availability, Booking, Hotel, Payment, Review, Room, User],
+  entities: [Availability, Booking, Hotel, Payment, Review, Room, User, Token],
   synchronize: false,
-  logging: true,
+  logging: false,
   migrations: ["src/migration/**/*.ts"],
 });
 

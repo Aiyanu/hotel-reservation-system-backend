@@ -2,6 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
 import { Booking } from "./Booking.entity";
 import { Review } from "./Review.entity";
 import { IUser } from "../interfaces/user.interface";
+import { Token } from "./Token.entity";
 
 @Entity()
 export class User implements IUser {
@@ -17,9 +18,6 @@ export class User implements IUser {
   @Column()
   username!: string;
 
-  // @Column()
-  // age!: number;
-
   @Column({ unique: true })
   email!: string;
 
@@ -32,9 +30,14 @@ export class User implements IUser {
   @Column({ default: "GUEST" })
   role!: string;
 
+  @Column({ default: false })
+  isEmailVerified!: boolean;
+
   @OneToMany(() => Booking, (booking) => booking.user)
   bookings!: Booking[];
 
   @OneToMany(() => Review, (review) => review.user)
   reviews!: Review[];
+  @OneToMany(() => Token, (token) => token.user)
+  tokens!: Token[];
 }

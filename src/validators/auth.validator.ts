@@ -2,7 +2,7 @@
 import { z } from "zod";
 
 // User Creation Schema
-export const createUserSchema = z.object({
+export const createSchema = z.object({
   username: z
     .string()
     .min(3, "Username must be at least 3 characters long")
@@ -17,7 +17,7 @@ export const createUserSchema = z.object({
 });
 
 // User Update Schema
-export const updateUserSchema = z.object({
+export const updateSchema = z.object({
   username: z
     .string()
     .min(3, "Username must be at least 3 characters long")
@@ -36,9 +36,13 @@ export const updateUserSchema = z.object({
 });
 
 // User Login Schema
-export const loginUserSchema = z.object({
+export const loginSchema = z.object({
   email: z.string().email("Invalid email address"),
   password: z.string().min(6, "Password must be at least 6 characters long"),
+});
+
+export const logoutSchema = z.object({
+  token: z.string().min(1, "Reset token is required"),
 });
 
 // Forgot Password Schema

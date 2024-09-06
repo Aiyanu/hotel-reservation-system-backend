@@ -5,17 +5,23 @@ import { IPayment } from "../interfaces/payment.interface";
 @Entity()
 export class Payment implements IPayment {
   @PrimaryGeneratedColumn("uuid")
-  id!: number;
+  id!: string;
+
+  @Column()
+  amount!: number;
+
+  @Column()
+  paymentDate!: Date;
+
+  @Column()
+  paymentMethod!: string; // E.g., "Paystack"
+
+  @Column()
+  status!: string; // "Success", "Failed"
+
+  @Column()
+  receiptUrl!: string; // For downloading the receipt if applicable
 
   @ManyToOne(() => Booking, (booking) => booking.payments)
   booking!: Booking;
-
-  @Column()
-  paymentMethod!: string; // e.g., 'credit card', 'paypal', etc.
-
-  @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
-  paymentDate!: Date;
-
-  @Column({ type: "decimal", precision: 10, scale: 2 })
-  amount!: number;
 }

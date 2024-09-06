@@ -1,0 +1,30 @@
+import {
+  IFindUserQuery,
+  IUserRepository,
+  IUser,
+  IUserCreationBody,
+} from "../interfaces/user.interface";
+
+class UserService {
+  private userRepository: IUserRepository;
+  constructor(_userRepository: IUserRepository) {
+    this.userRepository = _userRepository;
+  }
+  async getAllUsers() {
+    const query = { where: {} } as IFindUserQuery;
+    return await this.userRepository.fetchAll(query);
+  }
+  async getUserByField(query: IFindUserQuery) {
+    return await this.userRepository.fetchOne(query);
+  }
+
+  async updateUser(userId: string, userData: Partial<IUserCreationBody>) {
+    const query = { where: { id: userId } } as IFindUserQuery;
+    await this.userRepository.updateOne(query, userData);
+  }
+  async deleteUser(userId: string) {
+    const query = { where: { id: userId } } as IFindUserQuery;
+    await this.userRepository.deleteOne(query);
+  }
+}
+export default UserService;

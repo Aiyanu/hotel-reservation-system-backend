@@ -1,8 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
 import { Booking } from "./Booking.entity";
 import { Review } from "./Review.entity";
-import { Room } from "./Room.entity";
 import { IHotel } from "../interfaces/hotel.interface";
+import { Room } from "./Room.entity";
 @Entity()
 export class Hotel implements IHotel {
   // Adjusted the name to "Hotel" to better match the domain
@@ -35,6 +35,9 @@ export class Hotel implements IHotel {
 
   @Column({ type: "simple-array" })
   amenities!: string[];
+
+  @Column("text", { array: true, default: [] })
+  images!: string[]; // Array to store multiple image URLs for the room
 
   @OneToMany(() => Room, (room) => room.hotel)
   rooms!: Room[];

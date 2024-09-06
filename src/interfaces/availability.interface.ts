@@ -1,28 +1,31 @@
-import { FindOptionsWhere } from "typeorm";
+import { FindOneOptions, FindOptionsWhere } from "typeorm";
 import { IRoom } from "./room.interface";
+import { Availability } from "../entities";
 
 export interface IAvailability {
-  id: number;
+  id: string;
   room: IRoom;
   date: Date;
   available: boolean;
 }
 
-export interface IAvailabilityCreationBody extends Omit<IAvailability, "id"> {}
+export interface IAvailabilityCreationBody extends Omit<Availability, "id"> {}
 
 export interface IFindAvailabilityQuery {
-  where: FindOptionsWhere<IAvailability> | FindOptionsWhere<IAvailability>[]; // Specify the conditions to find the availability
-  relations?: string[]; // Specify the relations to include in the result
-  order?: { [P in keyof IAvailability]?: "ASC" | "DESC" }; // Specify the order of results
-  skip?: number; // Number of results to skip
-  take?: number; // Number of results to take
+  where: FindOptionsWhere<Availability> | FindOptionsWhere<Availability>[]; // Adjusted to ensure proper typing for `where`
+  relations?: string[]; // Optional relations to be included in the query
+  order?: { [P in keyof IAvailability]?: "ASC" | "DESC" }; // Ordering options
+  skip?: number; // Optional skip for pagination
+  take?: number; // Optional take for pagination
 }
 
-export interface IRepository {
+export interface IAvailabilityRepository {
   fetchOne(query: IFindAvailabilityQuery): Promise<IAvailability | null>;
+  fetchAll(query: IFindAvailabilityQuery): Promise<IAvailability[] | null>;
   create(record: IAvailabilityCreationBody): Promise<IAvailability>;
   updateOne(
-    searchBy: IFindAvailabilityQuery,
+    searchBy: FindOptionsWhere<IAvailability>,
     data: Partial<IAvailability>
   ): Promise<void>;
+  deleteOne(searchBy: FindOptionsWhere<IAvailability>): Promise<void>;
 }

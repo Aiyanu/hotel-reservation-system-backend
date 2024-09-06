@@ -4,8 +4,17 @@ import dotenv from "dotenv";
 dotenv.config();
 import cors from "cors";
 import { init } from "./src/database/init";
-import createUserRoute from "./src/routers/user.router";
 import { logRequests } from "./src/middlewares/middleware";
+import {
+  authRouter,
+  availabilityRouter,
+  bookingRouter,
+  hotelRouter,
+  paymentRouter,
+  reviewRouter,
+  roomRouter,
+  userRouter,
+} from "./src/routers";
 const app = express();
 const PORT = process.env.PORT;
 app.use(logRequests);
@@ -23,10 +32,14 @@ app.use((err: TypeError, req: Request, res: Response, next: NextFunction) => {
   } catch (e) {}
 });
 
-app.use("/api/users/", createUserRoute);
-// app.use("/api//hotels", hotelRoutes);
-// app.use("/api/rooms", roomRoutes);
-// app.use("/api/reservations", reservationRoutes);
+app.use("/api/auth/", authRouter);
+app.use("/api/users/", userRouter);
+app.use("/api/hotels", hotelRouter);
+app.use("/api/hotels", roomRouter);
+app.use("/api/bookings", bookingRouter);
+app.use("/api/rooms", availabilityRouter);
+app.use("/api/hotels", reviewRouter);
+app.use("/api/bookings", paymentRouter);
 
 app.get("/", (req, res) => {
   res.status(200).json({ status: true });

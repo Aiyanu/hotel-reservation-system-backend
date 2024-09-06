@@ -17,7 +17,7 @@ const logger = winston.createLogger({
   ],
 });
 
-export const handleSuccess = (
+const handleSuccess = (
   res: Response,
   statusCode: number,
   message: string,
@@ -33,7 +33,7 @@ export const handleSuccess = (
   });
 };
 
-export const handleError = (
+const handleError = (
   res: Response,
   statusCode: number,
   message: string,
@@ -47,15 +47,45 @@ export const handleError = (
   });
 };
 
-const validator =
-  (schema: z.ZodSchema<any>) =>
-  (req: Request, res: Response, next: Function) => {
-    const result = schema.safeParse(req.body);
-    if (result.success) {
-      next();
-    } else {
-      res.status(400).json({ errors: result.error.errors });
-    }
-  };
+const escapeHtml = (html: string) => {
+  return html.replace(/[&<>"']/g, "");
+};
 
-export { logger, validator };
+const isEmpty = (data: any) => {
+  return (
+    !data ||
+    data.length === 0 ||
+    typeof data == "undefined" ||
+    data == null ||
+    Object.keys(data).length == 0
+  );
+};
+const generateCode = (num: number = 15) => {
+  const dateString = Date.now().toString(36);
+  const randomness = Math.random().toString(36).substr(2);
+  let result = randomness + dateString;
+  result = result.length > num ? result.substring(0, num) : result;
+  return result.toUpperCase();
+};
+
+const ResponseCodes = {
+  SUCCESS: 200,
+  CREATED: 201,
+  BAD_REQUEST: 400,
+  UNAUTHORIZED: 401,
+  FORBIDDEN: 403,
+  NOT_FOUND: 404,
+  CONFLICT: 409,
+  INTERNAL_SERVER_ERROR: 500,
+  SERVICE_UNAVAILABLE: 503,
+};
+
+export {
+  logger,
+  ResponseCodes,
+  handleSuccess,
+  handleError,
+  escapeHtml,
+  isEmpty,
+  generateCode,
+};

@@ -5,11 +5,11 @@ import {
   ManyToOne,
   OneToMany,
 } from "typeorm";
-import { Hotel } from "./Hotel.entity";
 import { Room } from "./Room.entity";
 import { Payment } from "./Payment.entity";
 import { IBooking } from "../interfaces/booking.interface";
 import { User } from "./User.entity";
+import { Hotel } from "./Hotel.entity";
 
 @Entity()
 export class Booking implements IBooking {

@@ -5,10 +5,10 @@ import {
   ManyToOne,
   OneToMany,
 } from "typeorm";
-import { Hotel } from "./Hotel.entity";
 import { Booking } from "./Booking.entity";
-import { Availability } from "./Availability";
+import { Availability } from "./Availability.entity";
 import { IRoom } from "../interfaces/room.interface";
+import { Hotel } from "./Hotel.entity";
 
 @Entity()
 export class Room implements IRoom {
@@ -32,6 +32,9 @@ export class Room implements IRoom {
 
   @Column({ type: "simple-array" })
   amenities!: string[];
+
+  @Column("text", { array: true, default: [] })
+  images!: string[]; // Array to store multiple image URLs for the room
 
   @OneToMany(() => Booking, (booking) => booking.room)
   bookings!: Booking[];

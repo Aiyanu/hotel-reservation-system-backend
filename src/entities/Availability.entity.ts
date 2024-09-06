@@ -5,7 +5,7 @@ import { IAvailability } from "../interfaces/availability.interface";
 @Entity()
 export class Availability implements IAvailability {
   @PrimaryGeneratedColumn("uuid")
-  id!: number;
+  id!: string;
 
   @ManyToOne(() => Room, (room) => room.availability)
   room!: Room;

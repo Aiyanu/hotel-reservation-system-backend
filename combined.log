@@ -1,1 +1,57 @@
 2024-09-04T11:26:12.426Z [info]: Received GET request for /
+2024-09-06T00:52:24.701Z [info]: Received POST request for /api/auth/register
+2024-09-06T00:52:25.549Z [error]: Error: column User.isEmailVerified does not exist
+2024-09-06T00:58:37.729Z [info]: Received POST request for /api/auth/register
+2024-09-06T00:58:37.948Z [info]: Success: Registration Successful
+2024-09-06T01:01:52.276Z [info]: Received POST request for /api/auth/register
+2024-09-06T01:01:52.581Z [info]: Success: Registration Successful
+2024-09-06T01:03:33.442Z [info]: Received POST request for /api/auth/register
+2024-09-06T01:03:33.796Z [info]: Success: Registration Successful
+2024-09-06T01:05:49.788Z [info]: Received POST request for /api/auth/register
+2024-09-06T01:05:50.208Z [info]: Success: Registration Successful
+2024-09-06T01:06:43.173Z [info]: Received POST request for /api/auth/register
+2024-09-06T01:06:50.406Z [info]: Received POST request for /api/auth/register
+2024-09-06T01:06:50.641Z [error]: Error: User Already Exists
+2024-09-06T01:06:50.754Z [error]: Error: duplicate key value violates unique constraint "UQ_e12875dfb3b1d92d7d7c5377e22"
+2024-09-06T01:08:49.139Z [info]: Received POST request for /api/auth/register
+2024-09-06T01:08:49.426Z [error]: Error: User Already Exists
+2024-09-06T01:08:49.592Z [error]: Error: duplicate key value violates unique constraint "UQ_e12875dfb3b1d92d7d7c5377e22"
+2024-09-06T01:10:04.207Z [info]: Received POST request for /api/auth/register
+2024-09-06T01:10:04.499Z [error]: Error: User Already Exists
+2024-09-06T01:10:05.970Z [info]: Received POST request for /api/auth/register
+2024-09-06T01:10:06.095Z [error]: Error: User Already Exists
+2024-09-06T01:10:07.075Z [info]: Received POST request for /api/auth/register
+2024-09-06T01:10:07.277Z [error]: Error: User Already Exists
+2024-09-06T01:10:55.109Z [info]: Received POST request for /api/auth/register
+2024-09-06T01:10:55.407Z [error]: Error: User Already Exists
+2024-09-06T01:39:30.949Z [info]: Received POST request for /api/user/login
+2024-09-06T01:39:39.362Z [info]: Received POST request for /api/auth/login
+2024-09-06T01:39:39.510Z [info]: Success: Login Successful
+2024-09-06T01:41:30.611Z [info]: Received POST request for /api/auth/login
+2024-09-06T01:41:30.714Z [info]: Success: Login Successful
+2024-09-06T01:42:27.343Z [info]: Received POST request for /api/auth/login
+2024-09-06T01:42:27.606Z [info]: Success: Login Successful
+2024-09-06T01:42:43.424Z [info]: Received POST request for /api/auth/login
+2024-09-06T01:42:43.543Z [info]: Success: Login Successful
+2024-09-06T01:42:50.105Z [info]: Received POST request for /api/auth/login
+2024-09-06T01:42:50.186Z [info]: Success: Login Successful
+2024-09-06T01:43:56.638Z [info]: Received POST request for /api/auth/login
+2024-09-06T01:43:56.745Z [error]: Error: Invalid Credentials
+2024-09-06T01:44:07.870Z [info]: Received POST request for /api/auth/login
+2024-09-06T01:44:07.988Z [info]: Success: Login Successful
+2024-09-06T02:58:30.590Z [info]: Received GET request for /api/auth/forgot-password
+2024-09-06T02:58:37.751Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T02:58:37.884Z [error]: Error: No metadata for "Token" was found.
+2024-09-06T02:59:04.755Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T02:59:04.816Z [error]: Error: No metadata for "Token" was found.
+2024-09-06T03:00:09.698Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T03:00:09.763Z [error]: Error: No metadata for "Token" was found.
+2024-09-06T03:01:34.179Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T03:01:34.248Z [error]: Error: No metadata for "Token" was found.
+2024-09-06T03:01:35.640Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T03:01:35.648Z [error]: Error: No metadata for "Token" was found.
+2024-09-06T03:01:36.649Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T03:01:36.657Z [error]: Error: No metadata for "Token" was found.
+2024-09-06T03:03:24.414Z [info]: Received POST request for /api/auth/forgot-password
+2024-09-06T03:03:24.444Z [error]: Error: No metadata for "Token" was found.
+2024-09-06T03:20:11.945Z [info]: Received POST request for /api/auth/forgot-password

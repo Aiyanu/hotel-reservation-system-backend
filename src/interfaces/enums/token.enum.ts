@@ -1,0 +1,7 @@
+export const TokenType = {
+  //   AUTHENTICATION: "AUTHENTICATION",
+  EMAIL_VERIFICATION: "EMAIL_VERIFICATION",
+  PHONE_VERIFICATION: "PHONE_VERIFICATION",
+  PASSWORD_RESET: "PASSWORD_RESET",
+  // Add other token types as needed
+} as const;

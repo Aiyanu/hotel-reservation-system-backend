@@ -6,7 +6,7 @@ import { Hotel } from "./Hotel.entity";
 @Entity()
 export class Review implements IReview {
   @PrimaryGeneratedColumn("uuid")
-  id!: number;
+  id!: string;
 
   @ManyToOne(() => User, (user) => user.reviews)
   user!: User;
