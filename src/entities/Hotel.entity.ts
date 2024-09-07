@@ -9,7 +9,7 @@ export class Hotel implements IHotel {
   @PrimaryGeneratedColumn("uuid")
   id!: string;
 
-  @Column()
+  @Column({ unique: true })
   name!: string;
 
   @Column()
@@ -30,10 +30,10 @@ export class Hotel implements IHotel {
   @Column({ type: "decimal", precision: 9, scale: 6 })
   longitude!: number;
 
-  @Column()
+  @Column({ default: 0 })
   starRating!: number;
 
-  @Column({ type: "simple-array" })
+  @Column("text", { array: true, default: [] })
   amenities!: string[];
 
   @Column("text", { array: true, default: [] })

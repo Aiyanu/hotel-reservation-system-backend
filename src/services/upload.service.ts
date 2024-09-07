@@ -42,15 +42,15 @@ class UploadService {
   }
 
   public uploadUserProfilePhoto(file: Express.Multer.File) {
-    return this.uploadToS3(file, "profile_photos");
+    return this.uploadToS3(file, "profile-photos");
   }
 
   public uploadRoomImage(file: Express.Multer.File) {
-    return this.uploadToS3(file, "room_images");
+    return this.uploadToS3(file, "room-images");
   }
 
   public uploadHotelImage(file: Express.Multer.File) {
-    return this.uploadToS3(file, "hotel_images");
+    return this.uploadToS3(file, "hotel-images");
   }
 }
 export default UploadService;

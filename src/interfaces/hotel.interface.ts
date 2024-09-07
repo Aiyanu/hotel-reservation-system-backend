@@ -14,14 +14,15 @@ export interface IHotel {
   latitude: number;
   longitude: number;
   starRating: number;
-  amenities: string[];
-  images: string[];
+  amenities?: string[];
+  images?: string[];
   rooms: IRoom[];
   bookings: IBooking[];
   reviews: IReview[];
 }
 
-export interface IHotelCreationBody extends Omit<IHotel, "id"> {}
+export interface IHotelCreationBody
+  extends Omit<IHotel, "id" | "rooms" | "bookings" | "reviews"> {}
 
 export interface IFindHotelQuery {
   where: FindOptionsWhere<Hotel> | FindOptionsWhere<Hotel>[]; // Specify the conditions to find the hotel
@@ -35,6 +36,9 @@ export interface IHotelRepository {
   fetchOne(query: IFindHotelQuery): Promise<IHotel | null>;
   fetchAll(query: IFindHotelQuery): Promise<IHotel[] | null>;
   create(record: IHotelCreationBody): Promise<IHotel>;
-  updateOne(searchBy: IFindHotelQuery, data: Partial<IHotel>): Promise<void>;
-  deleteOne(searchBy: IFindHotelQuery): Promise<void>;
+  updateOne(
+    searchBy: Partial<IHotel>,
+    data: Partial<IHotelCreationBody>
+  ): Promise<void>;
+  deleteOne(searchBy: Partial<IHotel>): Promise<void>;
 }

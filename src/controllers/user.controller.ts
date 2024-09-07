@@ -109,14 +109,13 @@ class UserController {
   }
   async uploadProfilePhoto(req: Request, res: Response) {
     try {
-      const { email, id } = req.body;
+      const { id } = req.params;
 
       // Check if user exists
-      const user = await this.userService.getUserByField({ email });
+      const user = await this.userService.getUserByField({ id });
       if (!user) {
         return handleError(res, ResponseCodes.NOT_FOUND, "User not found");
       }
-      console.log(user);
 
       // Multer stores uploaded file in req.file
       const file = req.file; // Assuming the file is in req.file
@@ -124,8 +123,6 @@ class UserController {
       if (!file) {
         return handleError(res, ResponseCodes.BAD_REQUEST, "No file uploaded");
       }
-
-      console.log(file);
 
       // Upload the file to S3 via the upload service
       const uploadUrl = await this.uploadService.uploadUserProfilePhoto(file);
@@ -137,8 +134,6 @@ class UserController {
           "Failed to upload profile photo"
         );
       }
-
-      console.log(uploadUrl);
 
       // Update user with the profile photo URL
       await this.userService.updateUser({ id }, { profile_photo: uploadUrl });

@@ -178,3 +178,140 @@
 2024-09-06T23:43:57.905Z [info]: Success: Profile photo uploaded successfully
 2024-09-06T23:46:12.939Z [info]: Received GET request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb
 2024-09-06T23:46:13.031Z [info]: Success: User Fetched Successfully
+2024-09-07T08:49:07.155Z [info]: Received POST request for /api/hotels/
+2024-09-07T08:49:07.184Z [error]: Error: Authorization Failed
+2024-09-07T09:02:44.974Z [info]: Received POST request for /api/hotels/
+2024-09-07T09:02:44.991Z [error]: Error: Authorization Failed
+2024-09-07T09:02:46.489Z [info]: Received POST request for /api/hotels/
+2024-09-07T09:02:46.492Z [error]: Error: Authorization Failed
+2024-09-07T09:03:01.226Z [info]: Received POST request for /api/auth/login
+2024-09-07T09:03:01.383Z [info]: Success: Login Successful
+2024-09-07T09:06:11.585Z [info]: Received GET request for /api/hotels
+2024-09-07T09:06:11.587Z [error]: Error: Authorization Failed
+2024-09-07T09:06:52.314Z [info]: Received GET request for /api/hotels
+2024-09-07T09:06:52.375Z [info]: Success: Successfully fetched all hotels
+2024-09-07T10:41:27.169Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb
+2024-09-07T10:42:21.853Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb
+2024-09-07T10:42:21.879Z [error]: Error: Property "user" was not found in "User". Make sure your query is correct.
+2024-09-07T10:43:32.897Z [info]: Received POST request for /api/hotels/
+2024-09-07T10:45:11.015Z [info]: Received POST request for /api/hotels/
+2024-09-07T10:51:11.933Z [info]: Received POST request for /api/hotels/
+2024-09-07T10:55:19.167Z [info]: Received POST request for /api/hotels/
+2024-09-07T10:58:01.849Z [info]: Received POST request for /api/hotels/
+2024-09-07T10:58:09.242Z [info]: Received POST request for /api/hotels/
+2024-09-07T10:58:09.394Z [error]: Error: null value in column "starRating" of relation "hotel" violates not-null constraint
+2024-09-07T10:59:50.745Z [info]: Received POST request for /api/hotels/
+2024-09-07T10:59:50.811Z [info]: Success: Hotel Created Successfully
+2024-09-07T10:59:58.850Z [info]: Received GET request for /api/hotels
+2024-09-07T10:59:58.855Z [info]: Success: Successfully fetched all hotels
+2024-09-07T11:00:10.174Z [info]: Received GET request for /api/hotels/dff85f0b-9feb-4ec6-8dc4-db3080c17588
+2024-09-07T11:00:10.226Z [info]: Success: Hotel Found
+2024-09-07T11:02:01.219Z [info]: Received GET request for /api/hotels/dff85f0b-9feb-4ec6-8dc4-db3080c17588
+2024-09-07T11:02:01.241Z [info]: Success: Hotel Found
+2024-09-07T11:05:02.276Z [info]: Received PATCH request for /api/hotels/dff85f0b-9feb-4ec6-8dc4-db3080c17588
+2024-09-07T11:05:37.160Z [info]: Received PATCH request for /api/hotels/dff85f0b-9feb-4ec6-8dc4-db3080c17588
+2024-09-07T11:05:37.187Z [error]: Error: Property "user" was not found in "Hotel". Make sure your query is correct.
+2024-09-07T11:09:49.492Z [info]: Received PATCH request for /api/hotels/dff85f0b-9feb-4ec6-8dc4-db3080c17588
+2024-09-07T11:09:49.574Z [error]: Error: Property "user" was not found in "Hotel". Make sure your query is correct.
+2024-09-07T11:12:20.908Z [info]: Received PATCH request for /api/hotels/dff85f0b-9feb-4ec6-8dc4-db3080c17588
+2024-09-07T11:12:20.984Z [error]: Error: Property "user" was not found in "Hotel". Make sure your query is correct.
+2024-09-07T11:27:34.382Z [info]: Received PATCH request for /api/hotels/dff85f0b-9feb-4ec6-8dc4-db3080c17588
+2024-09-07T11:27:34.464Z [error]: Error: Property "user" was not found in "Hotel". Make sure your query is correct.
+2024-09-07T11:33:19.202Z [info]: Received PATCH request for /api/hotels/dff85f0b-9feb-4ec6-8dc4-db3080c17588
+2024-09-07T11:33:19.286Z [error]: Error: Property "user" was not found in "Hotel". Make sure your query is correct.
+2024-09-07T11:33:37.786Z [info]: Received GET request for /api/hotels/dff85f0b-9feb-4ec6-8dc4-db3080c17588
+2024-09-07T11:33:37.837Z [info]: Success: Hotel Found
+2024-09-07T11:33:56.928Z [info]: Received DELETE request for /api/hotels/dff85f0b-9feb-4ec6-8dc4-db3080c17588
+2024-09-07T11:33:56.997Z [info]: Success: Hotel Successfully Deleted
+2024-09-07T11:34:03.344Z [info]: Received GET request for /api/hotels
+2024-09-07T11:34:03.349Z [info]: Success: Successfully fetched all hotels
+2024-09-07T11:34:28.312Z [info]: Received POST request for /api/hotels/
+2024-09-07T11:34:28.386Z [info]: Success: Hotel Created Successfully
+2024-09-07T11:34:32.257Z [info]: Received POST request for /api/hotels/
+2024-09-07T11:34:32.263Z [error]: Error: Hotel Already Exist Under this name
+2024-09-07T11:34:40.210Z [info]: Received POST request for /api/hotels/
+2024-09-07T11:34:40.216Z [error]: Error: Hotel Already Exist Under this name
+2024-09-07T11:34:51.363Z [info]: Received GET request for /api/hotels
+2024-09-07T11:34:51.413Z [info]: Success: Successfully fetched all hotels
+2024-09-07T11:36:22.338Z [info]: Received PATCH request for /api/hotels/dff85f0b-9feb-4ec6-8dc4-db3080c17588
+2024-09-07T11:36:22.373Z [error]: Error: No Hotels Found
+2024-09-07T11:36:22.378Z [error]: Error: Property "user" was not found in "Hotel". Make sure your query is correct.
+2024-09-07T11:37:47.624Z [info]: Received PATCH request for /api/hotels/dff85f0b-9feb-4ec6-8dc4-db3080c17588
+2024-09-07T11:37:47.699Z [error]: Error: No Hotels Found
+2024-09-07T11:37:47.705Z [error]: Error: Property "user" was not found in "Hotel". Make sure your query is correct.
+2024-09-07T11:40:10.495Z [info]: Received GET request for /api/hotels/dff85f0b-9feb-4ec6-8dc4-db3080c17588
+2024-09-07T11:40:10.558Z [error]: Error: No Hotels Found
+2024-09-07T11:40:15.895Z [info]: Received GET request for /api/hotels
+2024-09-07T11:40:15.902Z [info]: Success: Successfully fetched all hotels
+2024-09-07T11:40:24.582Z [info]: Received GET request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a
+2024-09-07T11:40:24.587Z [info]: Success: Hotel Found
+2024-09-07T11:40:31.675Z [info]: Received PATCH request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a
+2024-09-07T11:40:31.700Z [error]: Error: Property "user" was not found in "Hotel". Make sure your query is correct.
+2024-09-07T11:42:09.743Z [info]: Received PATCH request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a
+2024-09-07T11:42:09.781Z [error]: Error: Property "user" was not found in "Hotel". Make sure your query is correct.
+2024-09-07T11:42:43.075Z [info]: Received PATCH request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a
+2024-09-07T11:42:43.118Z [error]: Error: Property "user" was not found in "Hotel". Make sure your query is correct.
+2024-09-07T11:44:02.476Z [info]: Received PATCH request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a
+2024-09-07T11:44:02.517Z [error]: Error: Cannot perform update query because update values are not defined. Call "qb.set(...)" method to specify updated values.
+2024-09-07T11:47:54.671Z [info]: Received PATCH request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a
+2024-09-07T11:47:54.723Z [error]: Error: Cannot perform update query because update values are not defined. Call "qb.set(...)" method to specify updated values.
+2024-09-07T11:48:58.206Z [info]: Received PATCH request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a
+2024-09-07T11:48:58.256Z [info]: Success: Hotel Successfully Updated
+2024-09-07T11:57:25.367Z [info]: Received PATCH request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a
+2024-09-07T11:57:25.555Z [error]: Error: Cannot perform update query because update values are not defined. Call "qb.set(...)" method to specify updated values.
+2024-09-07T11:59:02.630Z [info]: Received PATCH request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a
+2024-09-07T11:59:02.678Z [info]: Success: Hotel Successfully Updated
+2024-09-07T11:59:11.759Z [info]: Received GET request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a
+2024-09-07T11:59:11.766Z [info]: Success: Hotel Found
+2024-09-07T12:01:55.685Z [info]: Received POST request for /api/hotels/upload/fb42ecb2-4371-4753-aadb-688dd679355a/hotel-photo/
+2024-09-07T12:02:27.142Z [info]: Received POST request for /api/hotels/:id/upload/hotel-photo/
+2024-09-07T12:04:37.468Z [info]: Received POST request for /api/hotels/:id/upload/hotel-photo/
+2024-09-07T12:05:10.859Z [info]: Received POST request for /api/hotels/:id/upload/hotel-photo/
+2024-09-07T12:05:12.958Z [info]: Received POST request for /api/hotels/:id/upload/hotel-photo/
+2024-09-07T12:12:19.049Z [info]: Received POST request for /api/hotels/:id/upload/hotel-photo/
+2024-09-07T12:12:22.687Z [info]: Received POST request for /api/hotels/:id/upload/hotel-photo/
+2024-09-07T12:22:45.562Z [info]: Received POST request for /api/hotels/:id/upload/hotel-photo/
+2024-09-07T12:23:43.177Z [info]: Received POST request for /api/hotels/:id/upload/hotel-photo/
+2024-09-07T12:25:50.321Z [info]: Received POST request for /api/hotels/:id/upload/hotel-photo/
+2024-09-07T12:26:16.774Z [info]: Received POST request for /api/hotels/:id/upload/hotel-photo/
+2024-09-07T12:27:15.928Z [info]: Received POST request for /api/hotels/:id/upload/hotel-photo/
+2024-09-07T12:27:27.514Z [error]: Error: invalid input syntax for type uuid: ":id"
+2024-09-07T12:28:14.285Z [error]: Error: invalid input syntax for type uuid: ":id"
+2024-09-07T12:32:02.675Z [info]: Received POST request for /api/hotels/upload/hotel-photo/:id
+2024-09-07T12:32:57.880Z [error]: Error: invalid input syntax for type uuid: ":id"
+2024-09-07T12:33:22.453Z [info]: Received POST request for /api/hotels/upload/hotel-photo/:id
+2024-09-07T12:33:32.895Z [info]: Received POST request for /api/hotels/upload/hotel-photo/:id
+2024-09-07T16:24:14.744Z [info]: Received POST request for /api/hotels/upload/hotel-photo/:id
+2024-09-07T16:24:20.523Z [info]: Received PATCH request for /api/hotels/upload/hotel-photo/:id
+2024-09-07T16:25:05.255Z [info]: Received PATCH request for /api/hotels/upload/hotel-photo/:id
+2024-09-07T16:25:36.108Z [info]: Received PATCH request for /api/hotels/:id/upload/hotel-photo/
+2024-09-07T16:27:38.787Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
+2024-09-07T16:27:48.869Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
+2024-09-07T16:27:59.139Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
+2024-09-07T16:29:34.917Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
+2024-09-07T16:33:48.749Z [info]: Received POST request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
+2024-09-07T16:33:56.305Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
+2024-09-07T16:34:17.290Z [info]: Success: Profile photo uploaded successfully
+2024-09-07T16:34:34.519Z [info]: Received GET request for /api/hotels/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb
+2024-09-07T16:34:34.695Z [error]: Error: No Hotels Found
+2024-09-07T16:35:02.933Z [info]: Received PATCH request for /api/hotels/upload/:id/hotel-photo/
+2024-09-07T16:35:48.460Z [info]: Received POST request for /api/hotels/
+2024-09-07T16:35:48.678Z [error]: Error: Hotel Already Exist Under this name
+2024-09-07T16:35:55.339Z [info]: Received GET request for /api/hotels
+2024-09-07T16:35:55.344Z [info]: Success: Successfully fetched all hotels
+2024-09-07T16:36:21.114Z [info]: Received PATCH request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a/upload/hotel-photo/
+2024-09-07T16:36:57.222Z [info]: Success: Profile photo uploaded successfully
+2024-09-07T16:37:14.864Z [info]: Received GET request for /api/hotels
+2024-09-07T16:37:14.916Z [info]: Success: Successfully fetched all hotels
+2024-09-07T16:38:43.684Z [info]: Received PATCH request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a/upload/hotel-photo/
+2024-09-07T16:38:58.911Z [info]: Success: Profile photo uploaded successfully
+2024-09-07T16:39:59.781Z [info]: Received PATCH request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a/upload/hotel-photo/
+2024-09-07T16:40:11.895Z [info]: Success: Hotel Image uploaded successfully
+2024-09-07T16:43:15.993Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
+2024-09-07T16:44:41.607Z [info]: Received PATCH request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a/upload/hotel-photo/
+2024-09-07T16:44:47.565Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
+2024-09-07T16:48:13.247Z [info]: Received PATCH request for /api/hotels/fb42ecb2-4371-4753-aadb-688dd679355a/upload/hotel-photo/
+2024-09-07T16:51:38.626Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
+2024-09-07T16:58:09.697Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
+2024-09-07T17:29:14.826Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
+2024-09-07T17:29:22.932Z [info]: Success: Profile photo uploaded successfully

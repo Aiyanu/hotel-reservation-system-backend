@@ -32,8 +32,8 @@ app.use((err: TypeError, req: Request, res: Response, next: NextFunction) => {
   } catch (e) {}
 });
 
-app.use("/api/auth/", authRouter);
-app.use("/api/users/", userRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/users", userRouter);
 app.use("/api/hotels", hotelRouter);
 app.use("/api/hotels", roomRouter);
 app.use("/api/bookings", bookingRouter);

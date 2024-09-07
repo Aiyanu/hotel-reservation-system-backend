@@ -29,15 +29,15 @@ class HotelRepository implements IHotelRepository {
     return hotel;
   }
   async updateOne(
-    searchBy: IFindHotelQuery,
-    data: Partial<IHotel>
+    searchBy: Partial<IHotel>,
+    data: Partial<IHotelCreationBody>
   ): Promise<void> {
     await this.hotelRepository.update(
-      searchBy as FindOptionsWhere<Hotel>,
+      { ...searchBy } as FindOptionsWhere<Hotel>,
       data
     );
   }
-  async deleteOne(searchBy: IFindHotelQuery): Promise<void> {
+  async deleteOne(searchBy: Partial<IHotelCreationBody>): Promise<void> {
     await this.hotelRepository.delete(searchBy as FindOptionsWhere<Hotel>);
   }
 }

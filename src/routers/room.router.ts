@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 const router = express.Router();
-const hotelRouter = () => {
+const RoomRouter = () => {
   router.get("/:hotelId/rooms");
   router.get("/:hotelId/rooms/:roomId");
   router.post("/:hotelId/rooms");
@@ -10,4 +10,4 @@ const hotelRouter = () => {
   return router;
 };
 
-export default hotelRouter();
+export default RoomRouter();

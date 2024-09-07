@@ -11,15 +11,16 @@ export interface IUser {
   lastName: string;
   email: string;
   password: string;
-  profile_photo: string;
-  role: string;
-  isEmailVerified: boolean;
+  profile_photo?: string;
+  role?: string;
+  isEmailVerified?: boolean;
   bookings: IBooking[];
   reviews: IReview[];
   tokens: IToken[];
 }
 
-export interface IUserCreationBody extends Omit<IUser, "id"> {}
+export interface IUserCreationBody
+  extends Omit<IUser, "id" | "bookings" | "reviews" | "tokens"> {}
 
 export interface IFindUserQuery {
   where: FindOptionsWhere<User> | FindOptionsWhere<User>[]; // Specify the conditions to find the user

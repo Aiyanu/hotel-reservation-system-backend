@@ -1,6 +1,5 @@
 import { NextFunction, Response } from "express";
 import winston from "winston";
-import { z } from "zod";
 
 const { combine, timestamp, printf, json } = winston.format;
 
@@ -79,6 +78,8 @@ const ResponseCodes = {
   INTERNAL_SERVER_ERROR: 500,
   SERVICE_UNAVAILABLE: 503,
 };
+
+export const fileTypes = ["image/jpeg", "image/png", "image/jpg"];
 
 export {
   logger,

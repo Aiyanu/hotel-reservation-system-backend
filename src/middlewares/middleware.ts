@@ -39,7 +39,7 @@ const Auth = () => {
         if (!user) {
           throw new TypeError("Authorization Failed");
         }
-        req.body.user = decoded;
+        // req.body.user = decoded;
         next();
       } else {
         throw new TypeError("Authorization Failed");
@@ -105,9 +105,7 @@ const upload = multer({
 }).single("file"); // Modify this if you want to handle multiple files
 
 // Middleware to handle file upload and S3 upload
-export const uploadFileMiddleware = (
-  uploadType: "profile" | "room" | "hotel"
-) => {
+const uploadFileMiddleware = (uploadType: "profile" | "room" | "hotel") => {
   return (req: CustomRequest, res: Response, next: NextFunction) => {
     upload(req, res, async (err) => {
       if (err) {
@@ -122,6 +120,22 @@ export const uploadFileMiddleware = (
         return res
           .status(400)
           .json({ success: false, message: "No file provided" });
+      }
+
+      // Manual validation for file type and size
+      const allowedMimeTypes = ["image/jpeg", "image/png", "image/jpg"];
+      if (!allowedMimeTypes.includes(req.file.mimetype)) {
+        return res.status(400).json({
+          success: false,
+          message: "Unsupported file type. Only JPEG or PNG allowed.",
+        });
+      }
+
+      if (req.file.size > 5 * 1024 * 1024) {
+        return res.status(400).json({
+          success: false,
+          message: "File size must be less than 5MB",
+        });
       }
 
       try {
@@ -152,4 +166,4 @@ export const uploadFileMiddleware = (
   };
 };
 
-export { logRequests, Auth, validator };
+export { logRequests, Auth, validator, uploadFileMiddleware };
