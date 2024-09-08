@@ -315,3 +315,6 @@
 2024-09-07T16:58:09.697Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
 2024-09-07T17:29:14.826Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
 2024-09-07T17:29:22.932Z [info]: Success: Profile photo uploaded successfully
+2024-09-07T17:30:13.302Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
+2024-09-07T17:30:57.330Z [info]: Received PATCH request for /api/users/ff88fc54-71e3-4a46-a0ab-efb4fa6124cb/upload/profile
+2024-09-07T17:31:25.865Z [error]: Error: getaddrinfo ENOTFOUND my-hotel-images-bucket.s3.eu-north-1.amazonaws.com

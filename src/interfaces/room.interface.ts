@@ -1,4 +1,4 @@
-import { FindOptionsWhere } from "typeorm";
+import { FindOptionsSelect, FindOptionsWhere } from "typeorm";
 import { IBooking } from "./booking.interface";
 import { IHotel } from "./hotel.interface";
 import { IAvailability } from "./availability.interface";
@@ -17,11 +17,13 @@ export interface IRoom {
   availability: IAvailability[];
 }
 
-export interface IRoomCreationBody extends Omit<IRoom, "id"> {}
+export interface IRoomCreationBody
+  extends Omit<IRoom, "id" | "bookings" | "availability"> {}
 
 export interface IFindRoomQuery {
   where: FindOptionsWhere<Room> | FindOptionsWhere<Room>[]; // Specify the conditions to find the room
-  relations?: string[]; // Specify the relations to include in the result
+  relations?: string[];
+  select?: FindOptionsSelect<Room>; // Specify the relations to include in the result
   order?: { [P in keyof IRoom]?: "ASC" | "DESC" }; // Specify the order of results
   skip?: number; // Number of results to skip
   take?: number; // Number of results to take

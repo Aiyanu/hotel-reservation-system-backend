@@ -4,16 +4,13 @@ import bcrypt from "bcryptjs";
 import JWT from "jsonwebtoken";
 import AuthService from "../services/auth.service";
 import { EmailService, UserService } from "../services";
-import {
-  handleError,
-  handleSuccess,
-  ResponseCodes,
-} from "../utils/index.utils";
+import { handleError, handleSuccess } from "../utils/index.utils";
 import { IUserCreationBody } from "../interfaces/user.interface";
 import TokenService from "../services/token.service";
 import { TokenType } from "../interfaces/enums/token.enum";
 import { ITokenCreationBody } from "../interfaces/token.interface";
 import moment from "moment";
+import { ResponseCodes } from "../utils/constants";
 
 class AuthController {
   private authService: AuthService;

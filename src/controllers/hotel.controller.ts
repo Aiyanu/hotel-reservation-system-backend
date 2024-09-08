@@ -1,12 +1,9 @@
 import { Request, Response } from "express";
 import HotelService from "../services/hotel.service";
-import {
-  handleError,
-  handleSuccess,
-  ResponseCodes,
-} from "../utils/index.utils";
+import { handleError, handleSuccess } from "../utils/index.utils";
 import { UploadService } from "../services";
 import { IHotelCreationBody } from "../interfaces/hotel.interface";
+import { ResponseCodes } from "../utils/constants";
 
 class HotelController {
   private hotelService: HotelService;

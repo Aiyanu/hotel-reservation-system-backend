@@ -29,8 +29,8 @@ class BookingRepository implements IBookingRepository {
     return booking;
   }
   async updateOne(
-    searchBy: IFindBookingQuery,
-    data: Partial<IBooking>
+    searchBy: Partial<IBooking>,
+    data: Partial<IBookingCreationBody>
   ): Promise<void> {
     await this.bookingRepository.update(
       searchBy as FindOptionsWhere<Booking>,

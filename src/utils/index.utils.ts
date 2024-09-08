@@ -1,4 +1,4 @@
-import { NextFunction, Response } from "express";
+import { Response } from "express";
 import winston from "winston";
 
 const { combine, timestamp, printf, json } = winston.format;
@@ -67,26 +67,37 @@ const generateCode = (num: number = 15) => {
   return result.toUpperCase();
 };
 
-const ResponseCodes = {
-  SUCCESS: 200,
-  CREATED: 201,
-  BAD_REQUEST: 400,
-  UNAUTHORIZED: 401,
-  FORBIDDEN: 403,
-  NOT_FOUND: 404,
-  CONFLICT: 409,
-  INTERNAL_SERVER_ERROR: 500,
-  SERVICE_UNAVAILABLE: 503,
+// utils/selectFields.utils.ts
+const selectFields = (query: string | undefined) => {
+  if (!query) return undefined;
+  return query.split(",").reduce((acc: { [key: string]: boolean }, field) => {
+    acc[field] = true;
+    return acc;
+  }, {}); // Initialize with an empty object
 };
 
-export const fileTypes = ["image/jpeg", "image/png", "image/jpg"];
+// utils/parseRelations.utils.ts
+const parseRelations = (relations: string | undefined) => {
+  if (!relations) return undefined;
+  return relations.split(",");
+};
+
+// utils/pagination.utils.ts
+const paginate = (page: number, size: number) => {
+  const limit = size ? +size : 10; // Default to 10 items per page
+  const offset = page ? page * limit : 0;
+
+  return { limit, offset };
+};
 
 export {
   logger,
-  ResponseCodes,
   handleSuccess,
   handleError,
   escapeHtml,
   isEmpty,
   generateCode,
+  selectFields,
+  parseRelations,
+  paginate,
 };

@@ -1,4 +1,9 @@
-import { FindOptionsWhere, Repository } from "typeorm";
+import {
+  FindOptionsSelect,
+  FindOptionsSelectByString,
+  FindOptionsWhere,
+  Repository,
+} from "typeorm";
 import { IBooking } from "./booking.interface";
 import { IReview } from "./review.interface";
 import { User } from "../entities";
@@ -24,7 +29,8 @@ export interface IUserCreationBody
 
 export interface IFindUserQuery {
   where: FindOptionsWhere<User> | FindOptionsWhere<User>[]; // Specify the conditions to find the user
-  relations?: string[]; // Specify the relations to include in the result
+  relations?: string[];
+  select?: FindOptionsSelect<User>; // Specify the relations to include in the result
   order?: { [P in keyof IUser]?: "ASC" | "DESC" }; // Specify the order of results
   skip?: number; // Number of results to skip
   take?: number; // Number of results to take

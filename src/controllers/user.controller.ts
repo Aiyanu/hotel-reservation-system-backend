@@ -1,13 +1,10 @@
 import { Request, Response } from "express";
 import UserService from "../services/user.service";
 import { UploadService } from "../services";
-import {
-  handleError,
-  handleSuccess,
-  ResponseCodes,
-} from "../utils/index.utils";
+import { handleError, handleSuccess } from "../utils/index.utils";
 import { IUserCreationBody } from "../interfaces/user.interface";
 import { error } from "console";
+import { ResponseCodes } from "../utils/constants";
 
 class UserController {
   private userService: UserService;

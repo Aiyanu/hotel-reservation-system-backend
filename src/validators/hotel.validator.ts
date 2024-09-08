@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { fileTypes } from "../utils/index.utils";
 
 const createHotelSchema = z.object({
   name: z.string().min(1, "Hotel name is required"),
@@ -50,22 +49,8 @@ const updateHotelSchema = z.object({
   images: z.array(z.string().url("Invalid image URL")).optional(),
 });
 
-const uploadSchema = z.object({
-  file: z
-    .object({
-      originalname: z.string().min(1, "File must have a name"),
-      mimetype: z.string().refine((type) => {
-        console.log("types", type);
-        fileTypes.includes(type);
-      }, "Unsupported file type. Only JPEG or PNG allowed."),
-      size: z.number().max(10 * 1024 * 1024, "File size must be less than 5MB"), // Restrict file size to 5MB
-    })
-    .refine((file) => !!file, "File is required"), // Check if file exists
-});
-
 const hotelSchema = {
   createHotelSchema,
-  uploadSchema,
   updateHotelSchema,
 };
 

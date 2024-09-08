@@ -1,17 +1,13 @@
 // loggerMiddleware.ts
 import { Request, Response, NextFunction } from "express";
 import JWT from "jsonwebtoken";
-import {
-  handleError,
-  isEmpty,
-  logger,
-  ResponseCodes,
-} from "../utils/index.utils";
+import { handleError, isEmpty, logger } from "../utils/index.utils";
 import { IUser } from "../interfaces/user.interface";
 import { UploadService, UserService } from "../services";
 import { UserRepository } from "../repository";
 import { z } from "zod";
 import multer from "multer";
+import { ResponseCodes } from "../utils/constants";
 
 interface CustomRequest extends Request {
   fileLocation?: string;

@@ -1,4 +1,4 @@
-import { FindOptionsWhere } from "typeorm";
+import { FindOptionsSelect, FindOptionsWhere } from "typeorm";
 import { Token } from "../entities/Token.entity";
 import { IUser } from "./user.interface";
 
@@ -18,7 +18,8 @@ export interface ITokenCreationBody
 
 export interface IFindTokenQuery {
   where: FindOptionsWhere<Token> | FindOptionsWhere<Token>[]; // Specify the conditions to find the token
-  relations?: string[]; // Specify the relations to include in the result
+  relations?: string[];
+  select?: FindOptionsSelect<Token>; // Specify the relations to include in the result
   order?: { [P in keyof IToken]?: "ASC" | "DESC" }; // Specify the order of results
   skip?: number; // Number of results to skip
   take?: number; // Number of results to take

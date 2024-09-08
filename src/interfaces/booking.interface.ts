@@ -1,4 +1,4 @@
-import { FindOptionsWhere } from "typeorm";
+import { FindOptionsSelect, FindOptionsWhere } from "typeorm";
 import { IHotel } from "./hotel.interface";
 import { IPayment } from "./payment.interface";
 import { IRoom } from "./room.interface";
@@ -17,11 +17,13 @@ export interface IBooking {
   payments?: IPayment[];
 }
 
-export interface IBookingCreationBody extends Omit<IBooking, "id"> {}
+export interface IBookingCreationBody
+  extends Omit<IBooking, "id" | "payments"> {}
 
 export interface IFindBookingQuery {
   where: FindOptionsWhere<Booking> | FindOptionsWhere<Booking>[]; // Use Booking entity here
-  relations?: string[]; // Specify relations to include
+  relations?: string[];
+  select?: FindOptionsSelect<Booking>; // Specify relations to include
   order?: { [P in keyof Booking]?: "ASC" | "DESC" }; // Use Booking entity here
   skip?: number;
   take?: number;
@@ -32,8 +34,8 @@ export interface IBookingRepository {
   fetchAll(query: IFindBookingQuery): Promise<IBooking[] | null>;
   create(record: IBookingCreationBody): Promise<IBooking>;
   updateOne(
-    searchBy: IFindBookingQuery,
-    data: Partial<IBooking>
+    searchBy: Partial<IBooking>,
+    data: Partial<IBookingCreationBody>
   ): Promise<void>;
   deleteOne(searchBy: IFindBookingQuery): Promise<void>;
 }

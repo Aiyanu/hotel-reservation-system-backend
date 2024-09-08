@@ -1,6 +1,5 @@
 // userValidation.ts
 import { z } from "zod";
-import { fileTypes } from "../utils/index.utils";
 
 // User Creation Schema
 export const createSchema = z.object({
